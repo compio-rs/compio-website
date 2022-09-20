@@ -1,0 +1,35 @@
+{
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "ignore": ["frontend/app/client.ts"],
+    "attributePosition": "auto",
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "asNeeded",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "quoteStyle": "single",
+      "quoteProperties": "preserve",
+      "jsxQuoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all"
+    }
+  },
+  "json": {
+    "formatter": {
+      "trailingCommas": "none"
+    }
+  },
+  "organizeImports": {
+    "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
+  },
+  "files": {
+    "ignore": ["**/node_modules/**/*"]
+  }
+}

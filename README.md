@@ -1,24 +1,14 @@
-# React Vite Template
+# Compio Website
 
-If you need a clean template for development, then you can try it.
-
-## Getting started
+## Development
 
 ```shell
-# clone the project
-git clone https://github.com/985563349/react-vite-template.git
-
-# enter the project directory
-cd react-vite-template
-
-# install dependency
+# Install dependencies
 pnpm install
 
-# develop
+# Start the development server
 pnpm dev
 ```
-
-This will automatically open: http://127.0.0.1:5173
 
 ## Build
 
@@ -45,15 +35,14 @@ pnpm format
 - React
 - React Router
 - TypeScript
-- Axios
-- MSW
 - Vite
 - ESLint
-- Prettier
 - Commitlint
+- Tailwind CSS
+- PostCSS
 
 ## License
 
-[MIT](https://github.com/985563349/react-vite-template/blob/main/LICENSE)
+[MIT](https://github.com/compio-rs/website/blob/main/LICENSE)
 
-Copyright (c) 2022 Jee
+Copyright (c) 2024 George Miao

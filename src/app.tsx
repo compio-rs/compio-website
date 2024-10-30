@@ -9,6 +9,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import ErrorPage from './error-page'
 import Layout from './layout'
 import Index from './pages'
+import GetStarted from './pages/doc/get-started'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Index />,
       },
+      { path: '/doc/get-started', element: <GetStarted /> },
     ],
   },
 ])

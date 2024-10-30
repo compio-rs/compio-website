@@ -2,6 +2,26 @@ import { Icon } from '@iconify/react'
 import cx from 'classix'
 import { Link } from 'react-router-dom'
 
+const crates = [
+  'compio',
+  'compio-buf',
+  'compio-dispatcher',
+  'compio-driver',
+  'compio-fs',
+  'compio-io',
+  'compio-log',
+  'compio-macros',
+  'compio-net',
+  'compio-process',
+  'compio-quic',
+  'compio-runtime',
+  'compio-signal',
+  'compio-tls',
+  'winio',
+  'cyper',
+  'cyper-axum',
+]
+
 function FindLink({
   icon,
   to,
@@ -25,12 +45,17 @@ function FindLink({
 export default function Footer() {
   const currentYear = new Date().getFullYear()
   return (
-    <footer className='w-full bg-neutral-800 text-zinc-400 text-sm p-8 mt-20'>
+    <footer
+      className={cx(
+        'w-full bg-neutral-800 text-zinc-400 text-sm p-8 mt-20',
+        '*:container *:mx-auto *:sm:px-4 *:md:px-16',
+      )}
+    >
       <div
         className={cx(
-          'container mx-auto flex flex-col gap-8',
+          'flex flex-col gap-4',
           '[&_h1]:text-zinc-100 [&_h1]:font-normal [&_h1]:text-base [&_h1]:mb-2',
-          'sm:flex-row sm:*:w-32 sm:[&_h1]:text-zinc-100',
+          'sm:flex-row sm:gap-16 sm:[&_h1]:text-zinc-100',
         )}
       >
         <section>
@@ -52,54 +77,24 @@ export default function Footer() {
               text='Telegram'
             />
           </ul>
+          <h1 className='mt-4 sm:mt-16'>Projects</h1>
+          <ul className='hover:*:text-zinc-50'>
+            <li>
+              <Link to='https://github.com/compio-rs/cyper'>Cyper</Link>
+            </li>
+            <li>
+              <Link to='https://github.com/compio-rs/winio'>Winio</Link>
+            </li>
+          </ul>
         </section>
         <section>
           <h1>API Documents</h1>
           <ul className='hover:*:text-zinc-50'>
-            <li>
-              <Link to='https://docs.rs/compio'>compio</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-buf'>compio-buf</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-dispatcher'>
-                compio-dispatcher
-              </Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-driver'>compio-driver</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-fs'>compio-fs</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-io'>compio-io</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-log'>compio-log</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-macros'>compio-macros</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-net'>compio-net</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-process'>compio-process</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-quic'>compio-quic</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-runtime'>compio-runtime</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-signal'>compio-signal</Link>
-            </li>
-            <li>
-              <Link to='https://docs.rs/compio-tls'>compio-tls</Link>
-            </li>
+            {crates.map(crate => (
+              <li key={crate}>
+                <Link to={`https://docs.rs/${crate}`}>{crate}</Link>
+              </li>
+            ))}
           </ul>
         </section>
       </div>

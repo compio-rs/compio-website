@@ -1,13 +1,15 @@
 import { Outlet } from 'react-router-dom'
+import Footer from './components/block/footer'
+import Nav from './components/block/nav'
 
 function Layout() {
   return (
     <>
-      <nav>Nav</nav>
-      <main>
+      <Nav />
+      <main className='flex-grow'>
         <Outlet />
       </main>
-      <footer>Footer</footer>
+      <Footer />
     </>
   )
 }

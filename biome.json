@@ -1,4 +1,5 @@
 {
+  "$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
@@ -26,6 +27,13 @@
       "trailingCommas": "none"
     }
   },
+  "css": {
+    "formatter": {
+      "enabled": true,
+      "indentStyle": "space"
+    }
+  },
+
   "organizeImports": {
     "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
   },

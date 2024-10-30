@@ -1,4 +1,5 @@
 import '@fontsource-variable/dm-sans/opsz.css'
+import 'iconify-icon'
 import './index.css'
 
 import React from 'react'

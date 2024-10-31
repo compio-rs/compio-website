@@ -8,13 +8,24 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import ErrorPage from './error-page'
 import Layout from './layout'
 import Index from './pages'
+import Doc from './pages/doc'
 import GetStarted from './pages/doc/get-started'
+
+const docs = import.meta.glob('../docs/**/*.md')
+const docsRoutes = Object.entries(docs).map(([p, loader]) => {
+  const path = p.replace('../docs/', '').replace('.md', '')
+  return {
+    path,
+    element: <Doc path={path} loader={loader} />,
+  }
+})
 
 const router = createBrowserRouter([
   {
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
+      ...docsRoutes,
       {
         path: '/',
         element: <Index />,

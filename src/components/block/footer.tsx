@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react'
 import cx from 'classix'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const crates = [
@@ -19,6 +20,7 @@ const crates = [
   'compio-tls',
   'winio',
   'cyper',
+  'cyper-core',
   'cyper-axum',
 ]
 
@@ -44,6 +46,19 @@ function FindLink({
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const [columnCount, setColumnCount] = useState(1);
+  const updateColumnCount = () => {
+    const count = Math.max(Math.floor((window.innerWidth - 300) / 200), 1);
+    setColumnCount(count);
+  };
+  useEffect(() => {
+    updateColumnCount();
+    window.addEventListener('resize', updateColumnCount);
+
+    return () => {
+      window.removeEventListener('resize', updateColumnCount);
+    };
+  }, []);
   return (
     <footer
       className={cx(
@@ -77,7 +92,9 @@ export default function Footer() {
               text='Telegram'
             />
           </ul>
-          <h1 className='mt-4 sm:mt-16'>Projects</h1>
+        </section>
+        <section>
+          <h1>Projects</h1>
           <ul className='hover:*:text-zinc-50'>
             <li>
               <Link to='https://github.com/compio-rs/cyper'>Cyper</Link>
@@ -89,7 +106,7 @@ export default function Footer() {
         </section>
         <section>
           <h1>API Documents</h1>
-          <ul className='hover:*:text-zinc-50'>
+          <ul className='hover:*:text-zinc-50' style={{ columns: columnCount }}>
             {crates.map(crate => (
               <li key={crate}>
                 <Link to={`https://docs.rs/${crate}`}>{crate}</Link>

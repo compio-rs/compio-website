@@ -8,7 +8,7 @@ TCP sockets and Unix domain sockets are very much alike. The code for TCP socket
 
 A client could simply use `TcpStream::conect` to connect the remote listener.
 
-See the introduction of [`File::close`](../fs/file.md) for closing the sockets.
+See the introduction of [`File::close`](../fs/file) for closing the sockets.
 
 ## Dual-stack support
 

@@ -36,4 +36,6 @@ export function Item(props: Props) {
   return <motion.div variants={fadeInItem} {...props} />
 }
 
-export default { Container, Item }
+const FadeIn = { Container, Item }
+
+export default FadeIn

@@ -3,22 +3,54 @@ import './index.css'
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import {
+  type RouteObject,
+  RouterProvider,
+  createBrowserRouter,
+  redirect,
+} from 'react-router-dom'
 
-import ErrorPage from './error-page'
+import ContentLayout from './components/base/content-layout'
+import Markdown from './components/base/markdown'
+import ErrorPage from './error'
 import Layout from './layout'
-import Index from './pages'
-import Doc from './pages/doc'
-import GetStarted from './pages/doc/get-started'
 
-const docs = import.meta.glob('../docs/**/*.md')
-const docsRoutes = Object.entries(docs).map(([p, loader]) => {
-  const path = p.replace('../docs/', '').replace('.md', '')
+const docs = import.meta.glob<Markdown>('../content/docs/**/*.md', {
+  import: 'default',
+  eager: true,
+})
+
+const docsRoutes: RouteObject[] = Object.entries(docs).map(([p, md]) => {
+  const path = p.replace('../content/', '').replace('.md', '')
+
   return {
     path,
-    element: <Doc path={path} loader={loader} />,
+    element: (
+      <ContentLayout>
+        <Markdown path={path} content={md} />
+      </ContentLayout>
+    ),
   }
 })
+
+const pages = import.meta.glob<() => React.ReactNode>('./pages/**/*.tsx', {
+  import: 'default',
+  eager: true,
+})
+
+const pagesRoutes: RouteObject[] = Object.entries(pages).map(
+  ([p, Component]) => {
+    const path = p
+      .replace('./pages/', '')
+      .replace('.tsx', '')
+      .replace('index', '')
+
+    return {
+      path,
+      Component,
+    }
+  },
+)
 
 const router = createBrowserRouter([
   {
@@ -26,11 +58,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       ...docsRoutes,
+      ...pagesRoutes,
       {
-        path: '/',
-        element: <Index />,
+        path: '/docs',
+        loader: () => redirect('/docs/preface'),
       },
-      { path: '/doc/get-started', element: <GetStarted /> },
     ],
   },
 ])
@@ -39,9 +71,7 @@ export default function App() {
   return <RouterProvider router={router} />
 }
 
-ReactDOM.createRoot(
-  document.getElementsByTagName('body')[0] as HTMLElement,
-).render(
+ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

@@ -47,7 +47,7 @@ export default function Footer() {
   return (
     <footer
       className={cx(
-        'w-full bg-neutral-800 text-zinc-400 text-sm p-8 mt-20',
+        'w-full bg-neutral-800 text-zinc-400 text-sm p-8',
         '*:container *:mx-auto *:sm:px-4 *:md:px-16',
       )}
     >

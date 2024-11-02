@@ -33,7 +33,6 @@
       "indentStyle": "space"
     }
   },
-
   "organizeImports": {
     "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
   },

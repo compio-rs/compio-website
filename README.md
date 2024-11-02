@@ -30,6 +30,14 @@ pnpm lint
 pnpm format
 ```
 
+## TODO
+
+- [ ] Add "on this page" section
+- [ ] Code block highlight
+- [ ] Small screen optimization
+- [ ] Next/Prev page block (content-footer)
+- [ ] Back to top button
+
 ## Dependencies
 
 - React

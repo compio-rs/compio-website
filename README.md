@@ -37,6 +37,7 @@ pnpm format
 - [ ] Small screen optimization
 - [ ] Next/Prev page block (content-footer)
 - [ ] Back to top button
+- [ ] Dark Mode
 
 ## Dependencies
 

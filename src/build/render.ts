@@ -1,3 +1,4 @@
+import rehypeShiki from '@shikijs/rehype'
 import rehypeStringify from 'rehype-stringify'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
@@ -25,6 +26,9 @@ export async function render(code: string): Promise<Markdown> {
     .use(remarkParse)
     .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeShiki, {
+      theme: 'one-light',
+    })
     .use(rehypeStringify)
     .use(extractTitle)
     .process(code)

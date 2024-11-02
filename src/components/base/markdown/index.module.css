@@ -16,7 +16,7 @@
   .markdown-body,
   [data-theme="dark"] {
     /* dark */
-    color-scheme: dark;
+    /* color-scheme: dark;
     --focus-outlineColor: #1f6feb;
     --fgColor-default: #f0f6fc;
     --fgColor-muted: #9198a1;
@@ -66,11 +66,11 @@
     --color-prettylights-syntax-markup-ignored-text: #f0f6fc;
     --color-prettylights-syntax-markup-ignored-bg: #1158c7;
     --color-prettylights-syntax-meta-diff-range: #d2a8ff;
-    --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d; */
   }
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) { */
   .markdown-body,
   [data-theme="light"] {
     /* light */
@@ -126,7 +126,7 @@
     --color-prettylights-syntax-meta-diff-range: #8250df;
     --color-prettylights-syntax-sublimelinter-gutter-mark: #818b98;
   }
-}
+/* } */
 
 .markdown-body {
   -ms-text-size-adjust: 100%;

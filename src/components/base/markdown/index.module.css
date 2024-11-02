@@ -850,7 +850,7 @@
 
 .markdown-body code,
 .markdown-body tt {
-  @apply bg-blue-50 rounded relative -top-[1px];
+  @apply bg-neutral-100 text-blue-950 rounded relative -top-[1px];
 
   padding: .2em .4em;
   margin: 0;

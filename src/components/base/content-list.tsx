@@ -1,18 +1,7 @@
+import { isPage, isSubSect } from '@/util/section'
 import cx from 'classix'
 import { NavLink } from 'react-router-dom'
 import type { Page, Section } from '../../../content/docs/summary'
-
-function isPage(section: Section): section is Page {
-  return typeof section[0] === 'string'
-}
-
-function isSubSect(section: Section): section is [Page, Section[]] {
-  return (
-    section.length === 2 &&
-    typeof section[0] !== 'string' &&
-    Array.isArray(section[1])
-  )
-}
 
 function Triage({
   section,

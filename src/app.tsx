@@ -21,13 +21,13 @@ const docs = import.meta.glob<Markdown>('../content/docs/**/*.md', {
 })
 
 const docsRoutes: RouteObject[] = Object.entries(docs).map(([p, md]) => {
-  const path = p.replace('../content/', '').replace('.md', '')
+  const path = p.replace('../content', '').replace('.md', '')
 
   return {
     path,
     element: (
-      <ContentLayout>
-        <Markdown path={path} content={md} />
+      <ContentLayout path={path}>
+        <Markdown content={md} />
       </ContentLayout>
     ),
   }

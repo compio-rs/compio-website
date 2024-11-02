@@ -33,11 +33,17 @@ pnpm format
 ## TODO
 
 - [ ] Add "on this page" section
-- [ ] Code block highlight
+- [x] Code block highlight
 - [ ] Small screen optimization
-- [ ] Next/Prev page block (content-footer)
+- [x] Next/Prev page block (content-footer)
 - [ ] Back to top button
 - [ ] Dark Mode
+- [ ] Nav background opacity
+- [ ] SEO
+  - [ ] Page title
+  - [ ] Sitemap
+  - [ ] Robots.txt
+  - [ ] Open Graph
 
 ## Dependencies
 

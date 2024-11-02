@@ -36,7 +36,7 @@ const compio: Section[] = [
   ['Signal', '/docs/compio/signal'],
   ['Process', '/docs/compio/process'],
   ['TLS', '/docs/compio/tls'],
-  // [['QUIC', 'compio/quic'], [['HTTP 3', 'compio/quic/http3']]], // TODO: Write this
+  // [['QUIC', 'compio/quic'], [['HTTP 3', 'compio/quic/http3']]], // TODO(@Berrysoft): Write this
 ]
 
 const cyper: Section[] = [
@@ -49,7 +49,7 @@ const winio: Section[] = [
   ['Async GUI', '/docs/winio/async'],
   ['Component', '/docs/winio/component'],
   ['Layout', '/docs/winio/layout'],
-  ['Widgets', '/docs/winio/widgets'],
+  // ['Widgets', '/docs/winio/widgets'], // TODO(@Berrysoft): Write this
 ]
 
 const summary: Section[] = [

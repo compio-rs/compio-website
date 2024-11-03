@@ -14,7 +14,6 @@ export const Primary: Story = {
       html: content,
       title: 'h1 Heading 😎',
     },
-    path: '/content',
   },
 }
 

@@ -19,6 +19,7 @@ const crates = [
   'compio-tls',
   'winio',
   'cyper',
+  'cyper-core',
   'cyper-axum',
 ]
 

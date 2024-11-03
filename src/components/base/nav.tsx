@@ -8,7 +8,7 @@ export default function Nav() {
   const bg = useBgClass()
 
   return (
-    <nav className={cx('py-4 px-8 sticky top-0', bg)}>
+    <nav className={cx('py-4 px-8 sticky top-0 transition-colors', bg)}>
       <div className='flex items-center justify-between w-full max-w-screen-2xl mx-auto'>
         <Link to='/'>
           <img src={logo} alt='Compio' className='w-20 sm:w-28' />

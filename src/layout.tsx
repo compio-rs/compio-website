@@ -11,7 +11,7 @@ function Layout({ children }: { children?: React.ReactNode }) {
     <>
       <ScrollRestoration />
       <Nav />
-      <main className={cx('flex-grow', bg)}>
+      <main className={cx('flex-grow transition-colors', bg)}>
         {children ? children : <Outlet />}
       </main>
       <Footer />

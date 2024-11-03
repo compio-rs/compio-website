@@ -59,7 +59,7 @@ export default function Footer() {
         )}
       >
         <section>
-          <h1 className=''>Find Us</h1>
+          <h1>Find Us</h1>
           <ul className={cx('flex flex-col gap-2 pt-1')}>
             <FindLink
               icon='mdi:github'
@@ -77,7 +77,9 @@ export default function Footer() {
               text='Telegram'
             />
           </ul>
-          <h1 className='mt-4 sm:mt-16'>Projects</h1>
+        </section>
+        <section>
+          <h1>Projects</h1>
           <ul className='hover:*:text-zinc-50'>
             <li>
               <Link to='https://github.com/compio-rs/cyper'>Cyper</Link>
@@ -89,7 +91,7 @@ export default function Footer() {
         </section>
         <section>
           <h1>API Documents</h1>
-          <ul className='hover:*:text-zinc-50'>
+          <ul className='hover:*:text-zinc-50 grid gap-x-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {crates.map(crate => (
               <li key={crate}>
                 <Link to={`https://docs.rs/${crate}`}>{crate}</Link>

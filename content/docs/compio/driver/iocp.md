@@ -14,4 +14,4 @@ The mechanism forces the users "binding" the IO resources to a single async runt
 
 There are generally three ways to deal with event objects together with IOCP. We choose the documented way, the thread pool API. It is another thread pool maintained by kernel, and could handle more than 63 event objects easily.
 
-We are aware of the fact that the thread pool API is powered by the undocumented API `NtAssociateWaitCompletionPacket`. We just decided to not break the promise and keep using documented APIs.
+We are aware of the fact that the thread pool API is powered by the undocumented API `NtAssociateWaitCompletionPacket`. It could be enabled by `"iocp-wait-packet"` feature.

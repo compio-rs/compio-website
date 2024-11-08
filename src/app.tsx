@@ -27,7 +27,7 @@ const docsRoutes: RouteObject[] = Object.entries(docs).map(([p, md]) => {
     path,
     element: (
       <ContentLayout path={path}>
-        <Markdown content={md} />
+        <Markdown content={md} className='w-full' />
       </ContentLayout>
     ),
   }

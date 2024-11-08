@@ -7,15 +7,14 @@ import { Link } from 'react-router-dom'
 export default function ContentFooter({ path }: { path: string }) {
   const all = flatten(summary).filter(([, p]) => p)
   const index = all.findIndex(([, p]) => path.endsWith(p as string))
-  console.log(index, 'of', all)
   const prev = index === 0 ? null : all[index - 1]
   const next = index === all.length - 1 ? null : all[index + 1]
 
   return (
     <footer
       className={cx(
-        'flex justify-between gap-4 mt-24',
-        '*:flex *:flex-1 *:items-center *:gap-2 *:px-8 *:py-4 *:rounded',
+        'flex max-sm:flex-col justify-between gap-4 mt-24',
+        '*:flex *:flex-1 *:items-center *:gap-2 *:px-4 sm:*:px-8 *:py-4 *:rounded',
         '*:transition-colors *:border-neutral-200 hover:*:border-blue-900 hover:*:text-blue-950',
         '*:text-neutral-600',
       )}

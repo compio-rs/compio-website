@@ -99,7 +99,7 @@ export default function ContentList({
     <div
       className={cx(
         className,
-        'p-2 pr-6 text-sm font-medium max-h-[80lvh] overflow-y-auto scroll-smooth',
+        'p-2 pr-6 text-sm font-medium overflow-y-auto scroll-smooth',
       )}
       {...rest}
     >

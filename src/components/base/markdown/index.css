@@ -884,19 +884,20 @@
   border: 0;
 }
 
-.markdown-body .highlight {
+.markdown-body .shiki {
   margin-bottom: var(--base-size-16);
 }
 
-.markdown-body .highlight pre {
+.markdown-body .shiki pre {
   margin-bottom: 0;
   word-break: normal;
 }
 
-.markdown-body .highlight pre,
+.markdown-body .shiki pre,
 .markdown-body pre {
   padding: var(--base-size-16);
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: auto;
   font-size: 85%;
   line-height: 1.45;
   color: var(--fgColor-default);
@@ -1128,7 +1129,7 @@
 
 .markdown-body g-emoji {
   display: inline-block;
-  min-width: 1ch;
+  /* min-width: 1ch; */
   /* biome-ignore lint/a11y/useGenericFontNames: For emoji */
   font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1em;

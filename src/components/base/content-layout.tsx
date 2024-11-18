@@ -22,22 +22,22 @@ export default function ContentLayout({ children, path }: ContentLayoutProps) {
       className={cx(
         'bg-white relative',
         'flex gap-12 lg:gap-24 xl:gap-36',
-        'max-lg:flex-col max-lg:items-center',
+        'max-lg:flex-col max-lg:items-center'
       )}
     >
       <Sidebar expand={!isSmall} control={contentListCtrl}>
         <ContentList
           list={summary}
-          className='lg:sticky lg:top-[82px] max-h-[calc(100svh-164px)]'
+          className="lg:sticky lg:top-[82px] max-h-[calc(100svh-82px)]"
         />
       </Sidebar>
-      <div className='flex-1'>
+      <div className="flex-1">
         {isSmall && (
-          <div className='w-full h-16 border-t border-b flex items-center justify-between'>
+          <div className="w-full h-16 border-t border-b flex items-center justify-between">
             <MenuToggle control={contentListCtrl} />
           </div>
         )}
-        <div className='max-w-screen-md'>
+        <div className="max-w-screen-md">
           {children}
           <ContentFooter path={path} />
         </div>

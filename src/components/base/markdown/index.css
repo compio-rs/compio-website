@@ -494,6 +494,7 @@
 }
 
 .markdown-body pre {
+  max-width: calc(100vw - 64px);
   margin-top: 0;
   margin-bottom: 0;
   font-family: var(

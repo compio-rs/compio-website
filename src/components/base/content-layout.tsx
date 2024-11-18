@@ -33,11 +33,11 @@ export default function ContentLayout({ children, path }: ContentLayoutProps) {
       </Sidebar>
       <div className="flex-1">
         {isSmall && (
-          <div className="w-full h-16 border-t border-b flex items-center justify-between">
+          <div className="w-full h-16 border-t border-b flex items-center justify-between mb-4">
             <MenuToggle control={contentListCtrl} />
           </div>
         )}
-        <div className="max-w-screen-md">
+        <div className="max-w-screen-md mx-auto">
           {children}
           <ContentFooter path={path} />
         </div>

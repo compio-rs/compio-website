@@ -13,7 +13,7 @@ export default function Container({
       className={cx(
         'max-w-screen-2xl mx-auto py-4 px-8',
         isMain && 'pb-48',
-        className,
+        className
       )}
       {...rest}
     >

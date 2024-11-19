@@ -34,7 +34,7 @@ pnpm format
 
 - [ ] Add "on this page" section
 - [x] Code block highlight
-- [ ] Small screen optimization
+- [x] Small screen optimization
 - [x] Next/Prev page block (content-footer)
 - [ ] Back to top button
 - [ ] Dark Mode

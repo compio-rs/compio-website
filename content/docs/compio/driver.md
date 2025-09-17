@@ -1,6 +1,6 @@
 # Driver
 
-`compio-driver` provides 3 kinds of drivers, currently. On Windows, the IOCP driver is selected. On Linux, users can decide whether to use io-uring or epoll (powered by `polling`), or let the crate decide itself. For other circumstances, a reactor driver powered by `polling` is used. The driver type could be retrieved dynamically by `compio::driver::DriverType`.
+`compio-driver` provides 3 kinds of drivers, currently. On Windows, the IOCP driver is selected. On Linux, users can decide whether to use io-uring or epoll (powered by `polling`), or let the crate decide itself. For other circumstances, a reactor driver powered by `polling` is used. The driver type could be retrieved dynamically by `compio::driver::Proactor::driver_type`.
 
 Unless you want to write your own runtime based on a low level proactor, using `compio-driver` directly is not a good choice. The examples of `compio` _does_ provide an example using `compio-driver` directly, dealing with platform differences itself.
 

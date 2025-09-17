@@ -32,6 +32,10 @@ assert_eq!(read_len, buffer.len());
 
 `compio-io` also provides buffered reader & writer. A notable issue is that the read or write operations could not be cancelled by simply dropping them. The inner buffer may have transferred the ownership to the driver. Were the future dropped, the buffer would never come back.
 
+## Managed buffer pool
+
+`AsyncReadManaged` and `AsyncReadManagedAt` provide methods to read data with a buffer pool. The buffer pool itself, or the runtime, is responsible for selecting and filling in the suitable buffer. It is specially optimized when using `compio` with `"io-uring"` feature enabled.
+
 ## Compatible helpers
 
 Mod `compio::io::compat` provides `SyncStream` and `AsyncStream` for compatibility usages. `SyncStream` implements `std::io::{Read, Write}`, and will return error with `WouldBlock` if the inner buffer should be updated manually. `AsyncStream` wraps `SyncStream` and implements `AsyncRead` & `AsyncWrite` of `futures`.

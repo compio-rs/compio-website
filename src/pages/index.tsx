@@ -13,14 +13,14 @@ export default function Index() {
       <FadeIn.Container
         className={cx(
           'flex-grow min-h-[75lvh] pt-[clamp(10rem,25lvh,30rem)]',
-          'flex flex-col items-center gap-10 px-4 pb-12'
+          'flex flex-col items-center gap-10 px-4 pb-12',
         )}
       >
         <motion.h1
           variants={fadeInItem}
           className={cx(
             'bg-blue-100 px-6 rounded-lg inline-block text-center',
-            'text-blue-600 font-[900] leading-normal md:leading-snug'
+            'text-blue-600 font-[900] leading-normal md:leading-snug',
           )}
           style={{ fontSize: 'clamp(1.2rem, .6rem + 4vw, 4rem)' }}
         >
@@ -28,7 +28,7 @@ export default function Index() {
         </motion.h1>
         <motion.p
           variants={fadeInItem}
-          className="text-lg text-center px-8 text-zinc-600"
+          className='text-lg text-center px-8 text-zinc-600'
         >
           Compio is an async runtime for Rust built with completion-based IO
         </motion.p>
@@ -36,7 +36,7 @@ export default function Index() {
         <FadeIn.Item>
           <LinkButton
             to={'/docs/preface'}
-            right={<Icon icon="solar:arrow-right-linear" />}
+            right={<Icon icon='solar:arrow-right-linear' />}
           >
             Get Started
           </LinkButton>
@@ -45,16 +45,16 @@ export default function Index() {
       <FadeIn.Container
         className={cx('grid grid-cols-12 gap-4 xl:gap-8', 'md:p-12')}
       >
-        <FeatureBlock title="Fast" icon="solar:bolt-outline">
+        <FeatureBlock title='Fast' icon='solar:bolt-outline'>
           Leveraging completion-based IO, Compio is fast and efficient.
         </FeatureBlock>
-        <FeatureBlock title="Reliable" icon="solar:shield-check-outline">
+        <FeatureBlock title='Reliable' icon='solar:shield-check-outline'>
           Built with reliability in mind, safety is our top priority.
         </FeatureBlock>
-        <FeatureBlock title="Cross Platform" icon="solar:global-outline">
+        <FeatureBlock title='Cross Platform' icon='solar:global-outline'>
           Seamlessly run your async code across multiple platforms.
         </FeatureBlock>
-        <FeatureBlock title="User Friendly API" icon="solar:code-2-outline">
+        <FeatureBlock title='User Friendly API' icon='solar:code-2-outline'>
           Compio utilizes multi-crate design with a user-friendly API.
         </FeatureBlock>
       </FadeIn.Container>

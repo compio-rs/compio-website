@@ -26,4 +26,4 @@ There is no "signals" on Windows. Instead, they are "ctrl handlers" here. There 
 
 ## Signal handling on Linux
 
-It is different on Linux from other Unix systems. The handled signals are masked by `pthread_sigmask`, which is a thread-wide method. So that we can use "signalfd" to simplify the code.
+It is different on Linux than on other Unix systems. The handled signals are masked by `pthread_sigmask`, which is a thread-wide method. So that we can use "signalfd" to simplify the code.

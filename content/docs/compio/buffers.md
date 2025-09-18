@@ -1,6 +1,6 @@
 # Buffers
 
-Crate `compio-buf` is fundamental to `compio`. They provide abstracts for different buffers and IO operations.
+Crate `compio-buf` is fundamental to `compio`. It provides abstractions for different buffers and IO operations.
 
 ## Buffer traits
 
@@ -14,7 +14,7 @@ Sometimes an owned slice of the buffer is needed. `IoBuf::slice` provides such c
 
 ## Vectored buffers
 
-Traits `IoVectoredBuf` and `IoVectoredBufMut` provides abstracts for vectored read-only buffers and vectored mutable buffers. They are used in `write_vectored` and `read_vectored` like operations. Just like the single buffer traits, they also require the ownership of the buffers.
+Traits `IoVectoredBuf` and `IoVectoredBufMut` provide abstractions for vectored read-only buffers and vectored mutable buffers. They are used in `write_vectored` and `read_vectored` like operations. Just like the single buffer traits, they also require the ownership of the buffers.
 
 ## IO results with buffer
 

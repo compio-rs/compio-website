@@ -2,7 +2,7 @@
 
 Graphic user interfaces are naturally asynchronous. There should be a specialized GUI thread running a message loop, waiting for user inputs. The loop transforms the user inputs into messages, and dispatch them to different components to deal with it. GUI frameworks don't avoid telling about it. On Windows, a socket could be associated to a window handle `HWND`, and posts messages about the readiness. On macOS, the `CFRunLoop` provides a general loop for all high-level functionalities, including AppKit and IO.
 
-However, most GUI frameworks and async runtimes seems totally different. The GUI frameworks usually process the events with callbacks, while async runtimes hide the inner loops with syntax sugars. It makes many problems. Many programmers write their IO code in the GUI thread. Even they are using the most fancy framework, it will block the GUI, making the interface stuck. `winio` tries to solve the difference, and to prove that IO could be performed in the same thread as GUI.
+However, most GUI frameworks and async runtimes seem totally different. The GUI frameworks usually process the events with callbacks, while async runtimes hide the inner loops with syntax sugars. It makes many problems. Many programmers write their IO code in the GUI thread. Even if they are using the fanciest framework, it will block the GUI, making the interface unresponsive. `winio` tries to solve the difference, and to prove that IO could be performed in the same thread as GUI.
 
 ## Internals on Win32
 
@@ -10,7 +10,7 @@ We don't promise avoiding undocumented API here.
 
 After Windows 8, the IOCP is also an event object, which means it could be waited by `MsgWaitForMultipleObjectsEx`. This API also waits for message queue, and it's the core API of `winio` runtime on Windows.
 
-The DPI support it out of the box. Developers don't need to handle DPI at all.
+The DPI support is out of the box. Developers don't need to handle DPI at all.
 
 Dark mode support is complicated. [KNSoft.SlimDetours](https://github.com/KNSoft/KNSoft.SlimDetours) is used to hook "UxTheme.dll" and handle the dark mode colors. The theme related methods are hooked by the custom one, to deal with the dark mode automatically. All supported widgets and the task dialog could now aware of the dark mode and switch color theme automatically.
 
@@ -24,7 +24,7 @@ After WinUI 3 1.6, the runtime package doesn't contain dlls for WebView2. Instea
 
 ## Internals on macOS
 
-The `winio` runtime manages a `CFRunLoop` and an `NSApplication`. The fd of the proactor is added to the run loop as `CFFileDescriptor`. All code are written in Rust with the powerful crate `objc2`.
+The `winio` runtime manages a `CFRunLoop` and an `NSApplication`. The fd of the proactor is added to the run loop as `CFFileDescriptor`. All code is written in Rust with the powerful crate `objc2`.
 
 ## Internals on GTK
 
@@ -32,7 +32,7 @@ GTK backend only runs on Linux. Only GTK 4.14+ is supported.
 
 No `GtkApplication` is created. The `MainContext` of glib is created manually. The fd of the proactor is added to the context as a Unix fd.
 
-GTK provides too high-level interfaces. It does not provide mid-level for others to wrap it the second time. We will try our best to continue supporting it.
+GTK provides too high-level interfaces. It does not provide mid-level interfaces for others to wrap it a second time. We will try our best to continue supporting it.
 
 ## Internals on Qt
 

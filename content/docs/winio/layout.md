@@ -4,7 +4,7 @@ All layoutable components implements trait `Layoutable`. The layout helpers also
 
 The layout algorithm is powered by `taffy`, a CSS like layout engine. However, the exposed API of `winio` is in XAML favor. It is the user's choice to use any kind of layout engines.
 
-The layout helpers are lazy. They don't move or resize the widgets unless their locations or sizes are changed. It's a good practice to create and use them inside `Component::render` method.
+The layout helpers are lazy. They don't move or resize the widgets unless their locations or sizes are changed. It's a good practice to create and use them inside `Component::render` method. A helper macro `layout!` is provided.
 
 ## Stack panel
 

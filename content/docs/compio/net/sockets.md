@@ -10,6 +10,10 @@ A client could simply use `TcpStream::conect` to connect the remote listener.
 
 See the introduction of [`File::close`](../fs/file) for closing the sockets.
 
+## TCP options
+
+`TcpListener::bind_with_options`, `TcpStream::connect_with_options` and `TcpStream::bind_and_connect_with_options` accept `TcpOpts` to specify TCP options on creation.
+
 ## Dual-stack support
 
 Windows supports dual-stack IPv6 & IPv4, but it is not enabled by default. You need to enable it manually, after creating the socket, and before binding to an address, calling Windows API your self, if needed.

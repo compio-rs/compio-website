@@ -4,7 +4,7 @@ Graphic user interfaces are naturally asynchronous. There should be a specialize
 
 However, most GUI frameworks and async runtimes seems totally different. The GUI frameworks usually process the events with callbacks, while async runtimes hide the inner loops with syntax sugars. It makes many problems. Many programmers write their IO code in the GUI thread. Even they are using the most fancy framework, it will block the GUI, making the interface stuck. `winio` tries to solve the difference, and to prove that IO could be performed in the same thread as GUI.
 
-## Internals on Windows
+## Internals on Win32
 
 We don't promise avoiding undocumented API here.
 
@@ -13,6 +13,14 @@ After Windows 8, the IOCP is also an event object, which means it could be waite
 The DPI support it out of the box. Developers don't need to handle DPI at all.
 
 Dark mode support is complicated. [KNSoft.SlimDetours](https://github.com/KNSoft/KNSoft.SlimDetours) is used to hook "UxTheme.dll" and handle the dark mode colors. The theme related methods are hooked by the custom one, to deal with the dark mode automatically. All supported widgets and the task dialog could now aware of the dark mode and switch color theme automatically.
+
+## Internals on WinUI
+
+Only WinUI 3 and Windows 11 is supported, from 1.0 to 1.8. The CBS version shipped with the system is also supported when feature `"winui-enable-cbs"` is enabled.
+
+The dispatcher of WinUI uses IOCP internally, but doesn't expose any interface to reach it. We have to spawn a thread to wait for the IOCP handle of `compio`, and execute other methods through the dispatcher.
+
+After WinUI 3 1.6, the runtime package doesn't contain dlls for WebView2. Instead, the apps should bring their own versions. The feature `"winui-webview-system"` tries to find the system version of WebView2 SDK and load it.
 
 ## Internals on macOS
 
@@ -30,4 +38,4 @@ GTK provides too high-level interfaces. It does not provide mid-level for others
 
 Qt is an async GUI runtime itself. Both Qt 5 and Qt 6 are supported.
 
-It's not easy to use Qt in Rust. `cxx` is used to write some glue C++ code. The runtime creates `QApplication` in the current thread, and registers a timer with 0 timeout. The timer will be notified when the application is idle, and the callback polls the proactor. In that way, the `winio` runtime on Qt polls the proactor in a frequency at least 10Hz. This might be a drawback. If you have a better idea, feel free to contribute!
+It's not easy to use Qt in Rust. `cxx` is used to write some glue C++ code. The runtime creates `QApplication` in the current thread, and registers a `QSocketNotifier` with the fd of the proactor.

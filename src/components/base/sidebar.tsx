@@ -21,7 +21,7 @@ export default function Sidebar({
   from = 'left',
   width = '75vw',
   expand = false,
-  control
+  control,
 }: SidebarProps) {
   const [isOpen, setOpen] = control
   const animate = expand ? 'expand' : isOpen ? 'open' : 'closed'
@@ -39,7 +39,7 @@ export default function Sidebar({
     bottom: 0,
     overflowX: 'hidden',
     paddingTop: '3rem',
-    paddingLeft: '1rem'
+    paddingLeft: '1rem',
   }
 
   const sidebar = (
@@ -53,21 +53,21 @@ export default function Sidebar({
           top: 0,
           bottom: 0,
           left: 0,
-          right: 0
+          right: 0,
         },
         closed: {
           x: 0,
-          ...shared
+          ...shared,
         },
         open: {
           x: from === 'left' ? width : `-${width}`,
-          ...shared
-        }
+          ...shared,
+        },
       }}
       transition={{
         type: 'spring',
         damping: 60,
-        stiffness: 400
+        stiffness: 400,
       }}
     >
       {children}
@@ -76,7 +76,7 @@ export default function Sidebar({
 
   const backdrop = (
     <motion.div
-      className="fixed top-0 bottom-0 left-0 right-0 bg-neutral-800/80 z-20"
+      className='fixed top-0 bottom-0 left-0 right-0 bg-neutral-800/80 z-20'
       onClick={e => {
         setOpen(false)
         e.stopPropagation()
@@ -89,21 +89,21 @@ export default function Sidebar({
       }}
       animate={animate}
       style={{
-        opacity: 0
+        opacity: 0,
       }}
       variants={{
         open: {
           opacity: 1,
-          pointerEvents: 'auto'
+          pointerEvents: 'auto',
         },
         closed: {
           opacity: 0,
-          pointerEvents: 'none'
+          pointerEvents: 'none',
         },
         expand: {
           opacity: 0,
-          pointerEvents: 'none'
-        }
+          pointerEvents: 'none',
+        },
       }}
     />
   )

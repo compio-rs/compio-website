@@ -1,13 +1,9 @@
+import useScrollTop from '@/util/scroll-top'
 import { Icon } from '@iconify/react/dist/iconify.js'
 import cx from 'classix'
-import { useState } from 'react'
-import { useEventListener } from 'usehooks-ts'
 
 export default function BackToTop() {
-  const [top, setTop] = useState(0)
-  useEventListener('scroll', () => {
-    setTop(window.scrollY)
-  })
+  const top = useScrollTop()
 
   return (
     <button

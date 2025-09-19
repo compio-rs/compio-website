@@ -71,7 +71,7 @@ export default function App() {
   return <RouterProvider router={router} />
 }
 
-ReactDOM.createRoot(document.querySelector('#root') as HTMLElement).render(
+ReactDOM.createRoot(document.querySelector('body') as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

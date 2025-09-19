@@ -4,9 +4,9 @@ TCP & Unix sockets are streams, while `UdpSocket` is a datagram socket.
 
 TCP sockets and Unix domain sockets are very much alike. The code for TCP sockets should work also for Unix sockets.
 
-`TcpListener` is a listener, binds to a socket address, and listens for incoming client connections. Calling to `TcpListener::accept` receives a new connection, and returns the created `TcpStream` for the connection, and the peer address.
+`TcpListener` is a listener, binds to a socket address, and listens for incoming client connections. Calling `TcpListener::accept` receives a new connection, and returns the created `TcpStream` for the connection, and the peer address.
 
-A client could simply use `TcpStream::conect` to connect the remote listener.
+A client can simply use `TcpStream::connect` to connect to the remote listener.
 
 See the introduction of [`File::close`](../fs/file) for closing the sockets.
 

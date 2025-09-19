@@ -4,7 +4,7 @@
 
 ## Read & write
 
-`AsyncRead` & `AsyncWrite` provides abstracts for basic read & write operations. The APIs require ownership of the buffer. Therefore, for a blocking sync program
+`AsyncRead` & `AsyncWrite` provide abstractions for basic read & write operations. The APIs require ownership of the buffer. Therefore, for a blocking sync program
 
 ```rust
 let mut buffer = vec![0u8; 1024];

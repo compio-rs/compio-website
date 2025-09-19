@@ -1,6 +1,6 @@
 # Runtime
 
-`compio-runtime` provides a single-threaded async runtime. There may be many `compio::runtime::Runtime`s in one thread, while the "current" runtime is the last one whose `block_on` has been calling.
+`compio-runtime` provides a single-threaded async runtime. There may be many `compio::runtime::Runtime`s in one thread, while the "current" runtime is the last one whose `block_on` has been called.
 
 Users are recommended to use the proc macros provided by `compio-macros`:
 
@@ -17,7 +17,7 @@ The struct `Runtime` provides some low-level control APIs. They are used when us
 
 ## Timers
 
-A simple timer queue is implemented for timer and sleeping features. It may be not fine-tuned, and helps are welcome.
+A simple timer queue is implemented for timer and sleeping features. It may not be fine-tuned, and help is welcome.
 
 ## Events
 

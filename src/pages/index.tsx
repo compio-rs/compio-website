@@ -19,12 +19,12 @@ export default function Index() {
         <motion.h1
           variants={fadeInItem}
           className={cx(
-            'bg-blue-100 px-6 rounded-lg inline-block text-center',
-            'text-blue-600 font-[900] leading-normal md:leading-snug',
+            'px-6 rounded-lg inline-block text-center',
+            'text-6xl',
+            'text-neutral-600 font-[900] leading-normal md:leading-snug',
           )}
-          style={{ fontSize: 'clamp(1.2rem, .6rem + 4vw, 4rem)' }}
         >
-          Async IO, Completed.
+          Async IO, <span className='text-blue-600'>Completed</span>
         </motion.h1>
         <motion.p
           variants={fadeInItem}

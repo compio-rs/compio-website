@@ -45,7 +45,7 @@ export default function Sidebar({
   const sidebar = (
     <motion.aside
       animate={animate}
-      className={cx('z-50', expand && 'relative !w-auto')}
+      className={cx('z-20', expand && 'relative !w-auto')}
       variants={{
         expand: {
           x: 0,

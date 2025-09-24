@@ -7,7 +7,7 @@ export default function Nav() {
   return (
     <nav
       className={cx(
-        'py-4 px-8 sticky top-0 transition-none z-10 backdrop-blur-xl',
+        'py-4 px-8 sticky top-0 transition-none z-30 backdrop-blur-3xl',
       )}
     >
       <div className='flex items-center justify-between w-full max-w-screen-2xl mx-auto'>

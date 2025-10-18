@@ -17,6 +17,7 @@ const crates = [
   'compio-runtime',
   'compio-signal',
   'compio-tls',
+  'see',
   'winio',
   'cyper',
   'cyper-core',
@@ -87,6 +88,9 @@ export default function Footer() {
             </li>
             <li>
               <Link to='https://github.com/compio-rs/winio'>Winio</Link>
+            </li>
+            <li>
+              <Link to='https://github.com/compio-rs/see'>See</Link>
             </li>
           </ul>
         </section>

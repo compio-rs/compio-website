@@ -365,9 +365,9 @@ Implements [`AsWidget`], [`Visible`], [`Enable`], [`Layoutable`].
 | `Navigating` | Triggered when the webview starts navigating.   |
 | `Navigated`  | Triggered when the webview finishes navigating. |
 
-[`AsWidget`]: ./handle.md#widget
-[`AsContainer`]: ./handle.md#container
-[`AsWindow`]: ./handle.md#window
+[`AsWidget`]: ./handle#widget
+[`AsContainer`]: ./handle#container
+[`AsWindow`]: ./handle#window
 [`Visible`]: #trait-visible
 [`Enable`]: #trait-enable
 [`Layoutable`]: #trait-layoutable

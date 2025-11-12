@@ -51,7 +51,7 @@ const winio: Section[] = [
   ['Component', '/docs/winio/component'],
   ['Layout', '/docs/winio/layout'],
   ['Handle', '/docs/winio/handle'],
-  // ['Widgets', '/docs/winio/widgets'], // TODO(@Berrysoft): Write this
+  ['Widgets', '/docs/winio/widgets'],
 ]
 
 const summary: Section[] = [

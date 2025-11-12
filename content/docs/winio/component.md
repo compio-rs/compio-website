@@ -10,12 +10,13 @@ pub trait Component: Sized {
 
     fn init(init: Self::Init<'_>, sender: &ComponentSender<Self>) -> Self;
     async fn start(&mut self, sender: &ComponentSender<Self>) -> !;
-    async fn update(
-        &mut self,
-        message: Self::Message,
-        sender: &ComponentSender<Self>,
-    ) -> bool;
+    async fn update(&mut self, message: Self::Message, sender: &ComponentSender<Self>) -> bool;
     fn render(&mut self, sender: &ComponentSender<Self>);
+
+    async fn update_children(&mut self) -> bool {
+        false
+    }
+    fn render_children(&mut self) {}
 }
 ```
 

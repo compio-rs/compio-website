@@ -21,3 +21,20 @@ The layout helpers are lazy. They don't move or resize the widgets unless their 
 | `0.5, 1.14, 514` | `GridLength::Length(_)`  |
 
 For example, passing `"auto, 1*, 2*, 50"` to `rows` means 4 rows. The first height is automatically determined, and the last height is a fixed number 50. The second height is always the half of the third one.
+
+## Macros
+A helper macro `layout!` is provided to create layoutable components more easily.
+
+```rust
+fn render(&mut self, _sender: &ComponentSender<Self>) {
+    let csize = self.window.client_size();
+    let mut panel = layout! {
+        StackPanel::new(Orient::Vertical),
+        self.label, self.button,
+        self.canvas => { grow: true }
+    };
+    panel.set_size(csize);
+}
+```
+The `layout!` macro creates a vertical `StackPanel` with 3 children: `self.label`, `self.button` and `self.canvas`. The last child is set to grow to occupy all remain spaces.
+The layout process is triggered when `set_size` is called on the panel.

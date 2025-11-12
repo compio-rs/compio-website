@@ -50,6 +50,7 @@ const winio: Section[] = [
   ['Async GUI', '/docs/winio/async'],
   ['Component', '/docs/winio/component'],
   ['Layout', '/docs/winio/layout'],
+  ['Handle', '/docs/winio/handle'],
   // ['Widgets', '/docs/winio/widgets'], // TODO(@Berrysoft): Write this
 ]
 

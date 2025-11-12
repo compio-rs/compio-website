@@ -6,7 +6,7 @@ There are three kinds of handles in `winio`.
 
 ## Window
 
-A window is a window - the top-level container of all widgets. It provides special methods and properties to manage the window itself, such as setting the title, resizing, and handling window events.
+A window is a top-level container of all widgets. It provides special methods and properties to manage the window itself, such as setting the title, resizing, and handling window events.
 
 | Platform | Type                          |
 | -------- | ----------------------------- |

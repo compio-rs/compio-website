@@ -46,7 +46,7 @@ const cyper: Section[] = [
 ]
 
 const winio: Section[] = [
-  ['Start', '/docs/winio/start'],
+  ['Getting started', '/docs/winio/start'],
   ['Async GUI', '/docs/winio/async'],
   ['Component', '/docs/winio/component'],
   ['Layout', '/docs/winio/layout'],

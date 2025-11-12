@@ -1,4 +1,4 @@
-# Start
+# Getting started
 
 A typical `winio` application starts with an `App` and a `Component`. Let's start from a basic `Component`.
 
@@ -23,7 +23,7 @@ enum MainMessage {
 }
 ```
 
-The `Noop` message does nothing. It is here to make it easy for children passing their own internal messages.
+The `Noop` message does nothing. It is here to make it easy for children to pass their own internal messages.
 
 The `Close` message is used to close the window. We will connect it to the `Close` event of the window, and handle it in the `update` method later.
 

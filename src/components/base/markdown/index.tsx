@@ -11,7 +11,7 @@ export default function Markdown({
   return (
     <article
       className={cx(
-        'min-h-[65lvh] max-w-full block overflow-x-hidden min-w-0',
+        'min-h-[65lvh] block overflow-x-hidden min-w-0',
         'markdown-body',
         className,
       )}

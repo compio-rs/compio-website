@@ -228,11 +228,11 @@
 
 .markdown-body sup {
   top: -0.5em;
+  max-width: calc(100vw - 64px);
 }
 
 .markdown-body img {
   border-style: none;
-  max-width: 100%;
   box-sizing: content-box;
 }
 
@@ -326,12 +326,13 @@
 }
 
 .markdown-body table {
+  max-width: calc(100vw - 64px);
   border-spacing: 0;
   border-collapse: collapse;
   display: block;
   width: max-content;
-  max-width: 100%;
-  overflow: auto;
+  overflow-x: scroll;
+  overflow-y: auto;
 }
 
 .markdown-body td,

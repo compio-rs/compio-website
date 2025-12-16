@@ -20,7 +20,7 @@ export default function LinkButton({
   return (
     <Link
       className={cx(
-        'bg-blue-950 text-white px-6 py-3 rounded-full flex items-center gap-2',
+        'px-6 py-3 rounded-full flex items-center gap-2',
         className,
       )}
       to={to}

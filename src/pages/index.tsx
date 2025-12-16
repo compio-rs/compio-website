@@ -19,22 +19,30 @@ export default function Index() {
         <motion.h1
           variants={fadeInItem}
           className={cx(
-            'px-6 rounded-lg inline-block text-center',
+            'px-8 py-2 rounded-xl inline-block text-center',
             'text-6xl',
-            'text-neutral-600 font-[900] leading-normal md:leading-snug',
+            'bg-blue-50/70 text-neutral-600 font-[900] leading-normal md:leading-snug',
           )}
         >
           Async IO, <span className='text-blue-600'>Completed</span>
         </motion.h1>
         <motion.p
           variants={fadeInItem}
-          className='text-lg text-center px-8 text-zinc-600'
+          className='text-lg text-center px-8 text-neutral-600'
         >
           Compio is an async runtime for Rust built with completion-based IO
         </motion.p>
         <div />
-        <FadeIn.Item>
+        <FadeIn.Item className='flex gap-4'>
           <LinkButton
+            className='bg-neutral-700 text-white'
+            to={'https://docs.rs/compio'}
+          // right={<Icon icon='solar:arrow-right-linear' />}
+          >
+            API Reference
+          </LinkButton>
+          <LinkButton
+            className='bg-blue-950 text-white'
             to={'/docs/preface'}
             right={<Icon icon='solar:arrow-right-linear' />}
           >

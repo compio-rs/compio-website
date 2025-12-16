@@ -84,6 +84,9 @@ export default function Footer() {
           <h1>Projects</h1>
           <ul className='hover:*:text-zinc-50'>
             <li>
+              <Link to='https://github.com/compio-rs/compio'>Compio</Link>
+            </li>
+            <li>
               <Link to='https://github.com/compio-rs/cyper'>Cyper</Link>
             </li>
             <li>

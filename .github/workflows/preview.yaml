@@ -1,0 +1,33 @@
+name: Deploy PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: read
+  pull-requests: write
+  deployments: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Deploy preview on PR open/update
+      - name: Deploy Preview
+        if: github.event.action != 'closed'
+        uses: mertselimb/cloudflare-workers-pr-preview@v1.0.1
+        with:
+          cloudflare-api-token: ${{ secrets.CF_API_TOKEN }}
+          cloudflare-account-id: ${{ secrets.CF_ACCOUNT_ID }}
+
+      # Cleanup preview on PR close/merge
+      - name: Cleanup Preview
+        if: github.event.action == 'closed'
+        uses: mertselimb/cloudflare-workers-pr-preview@v1.0.1
+        with:
+          cloudflare-api-token: ${{ secrets.CF_API_TOKEN }}
+          cloudflare-account-id: ${{ secrets.CF_ACCOUNT_ID }}
+          mode: cleanup

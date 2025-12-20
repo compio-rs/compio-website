@@ -1,0 +1,35 @@
+name: Deploy PR Preview
+on: pull_request
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Deploy
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          packageManager: pnpm
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy ./dist --project-name=compio-website
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: preview-deployed
+          message: |
+            **Preview Deployed!**
+
+            Your changes have been deployed to a preview environment. You can view it here: ${{ steps.deploy.outputs.deployment-url }}

@@ -1,33 +1,35 @@
 name: Deploy PR Preview
-
-on:
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-
-permissions:
-  contents: read
-  pull-requests: write
-  deployments: write
+on: pull_request
 
 jobs:
-  preview:
+  deploy:
     runs-on: ubuntu-latest
+    name: Deploy
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
-
-      # Deploy preview on PR open/update
-      - name: Deploy Preview
-        if: github.event.action != 'closed'
-        uses: mertselimb/cloudflare-workers-pr-preview@v1.0.1
+      - uses: pnpm/action-setup@v4
         with:
-          cloudflare-api-token: ${{ secrets.CF_API_TOKEN }}
-          cloudflare-account-id: ${{ secrets.CF_ACCOUNT_ID }}
-
-      # Cleanup preview on PR close/merge
-      - name: Cleanup Preview
-        if: github.event.action == 'closed'
-        uses: mertselimb/cloudflare-workers-pr-preview@v1.0.1
+          version: 10
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+      - name: Deploy
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
         with:
-          cloudflare-api-token: ${{ secrets.CF_API_TOKEN }}
-          cloudflare-account-id: ${{ secrets.CF_ACCOUNT_ID }}
-          mode: cleanup
+          packageManager: pnpm
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          command: pages deploy ./dist --project-name=compio-website
+      - name: Comment PR
+        uses: thollander/actions-comment-pull-request@v3
+        with:
+          comment-tag: preview-deployed
+          message: |
+            **Preview Deployed!**
+
+            Your changes have been deployed to a preview environment. You can view it here: ${{ steps.deploy.outputs.deployment-url }}

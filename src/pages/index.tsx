@@ -30,7 +30,7 @@ export default function Index() {
           variants={fadeInItem}
           className='text-lg text-center px-8 text-neutral-600'
         >
-          Compio is an async runtime for Rust built with completion-based IO
+          This is a testing preview page for CI
         </motion.p>
         <div />
         <FadeIn.Item className='flex gap-4'>

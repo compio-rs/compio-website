@@ -1,24 +1,17 @@
-import react from '@vitejs/plugin-react-swc'
-import { resolve } from 'node:path'
-import { type Plugin, defineConfig } from 'vite'
-import vitePluginFaviconsInject from 'vite-plugin-favicons-inject'
-import { markdownToHtml } from './src/build/vite-plugin'
+import { reactRouter } from '@react-router/dev/vite';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import mdx from 'fumadocs-mdx/vite';
+import * as MdxConfig from './source.config';
 
 export default defineConfig({
   plugins: [
-    vitePluginFaviconsInject('assets/colored-bold.svg') as unknown as Plugin,
-    markdownToHtml(),
-    react(),
+    mdx(MdxConfig),
+    tailwindcss(),
+    reactRouter(),
+    tsconfigPaths({
+      root: __dirname,
+    }),
   ],
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src'),
-      'content': resolve(__dirname, 'content'),
-    },
-  },
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly',
-    },
-  },
-})
+});

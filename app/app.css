@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/vitepress.css';
+@import 'fumadocs-ui/css/preset.css';
+
+
+@theme {
+  /* Light gray background */
+  --color-fd-foreground: hsl(0, 0%, 3.9%);
+  /* Almost black text */
+  --color-fd-muted: hsl(0, 0%, 96.1%);
+  /* Slightly off-white muted bg */
+  --color-fd-muted-foreground: hsl(0, 0%, 45.1%);
+  /* Medium gray text */
+  --color-fd-popover: hsl(0, 0%, 98%);
+  /* Popover/card background */
+  --color-fd-popover-foreground: hsl(0, 0%, 15.1%);
+  /* Dark gray popover text */
+  --color-fd-card: hsl(0, 0%, 94.7%);
+  /* Card background */
+  --color-fd-card-foreground: hsl(0, 0%, 3.9%);
+  /* Card text */
+  --color-fd-border: hsla(0, 0%, 80%, 50%);
+  /* Light gray border */
+  --color-fd-primary: hsl(210, 100%, 40%);
+  /* Deep blue for links/buttons */
+  --color-fd-primary-foreground: hsl(0, 0%, 98%);
+  /* White text on primary */
+  --color-fd-secondary: hsl(0, 0%, 93.1%);
+  /* Light gray secondary */
+  --color-fd-secondary-foreground: hsl(0, 0%, 9%);
+  /* Dark gray secondary text */
+  --color-fd-accent: hsla(210, 100%, 80%, 50%);
+  /* Light blue accent */
+  --color-fd-accent-foreground: hsl(0, 0%, 9%);
+  /* Dark gray accent text */
+  --color-fd-ring: hsl(210, 100%, 60%);
+  /* Blue ring/outline */
+
+  /* Override Tailwind's blue palette */
+
+  --color-blue-50: hsl(190 10% 99%);
+  --color-blue-100: hsl(191 18% 96%);
+  --color-blue-200: hsl(192 30% 92%);
+  --color-blue-300: hsl(193 45% 86%);
+  --color-blue-400: hsl(195 65% 78%);
+  --color-blue-500: hsl(197 80% 68%);
+  --color-blue-600: hsl(198 90% 58%);
+  --color-blue-700: hsl(199 95% 48%);
+  --color-blue-800: hsl(200 100% 38%);
+  --color-blue-900: hsl(200 100% 30%);
+  --color-blue-950: hsl(200 100% 22%);
+
+}
+
+
+.dark {
+  --color-fd-background: hsl(0, 0%, 7.04%);
+  /* Very dark gray background */
+  --color-fd-foreground: hsl(0, 0%, 92%);
+  /* Bright white text */
+  --color-fd-muted: hsl(0, 0%, 12.9%);
+  /* Slightly lighter dark gray */
+  --color-fd-muted-foreground: hsla(0, 0%, 70%, 0.8);
+  /* Light gray muted text */
+  --color-fd-popover: hsl(0, 0%, 11.6%);
+  /* Popover background */
+  --color-fd-popover-foreground: hsl(0, 0%, 86.9%);
+  /* Light gray popover text */
+  --color-fd-card: hsl(0, 0%, 9.8%);
+  /* Card background */
+  --color-fd-card-foreground: hsl(0, 0%, 98%);
+  /* White card text */
+  --color-fd-border: hsla(0, 0%, 40%, 20%);
+  /* Subtle dark border */
+  --color-fd-primary: hsl(210, 100%, 60%);
+  /* Lighter blue in dark mode */
+  --color-fd-primary-foreground: hsl(0, 0%, 9%);
+  /* Dark gray text on primary */
+  --color-fd-secondary: hsl(0, 0%, 12.9%);
+  /* Dark gray secondary */
+  --color-fd-secondary-foreground: hsl(0, 0%, 92%);
+  /* White secondary text */
+  --color-fd-accent: hsla(210, 100%, 40%, 30%);
+  /* Medium blue accent */
+  --color-fd-accent-foreground: hsl(0, 0%, 90%);
+  /* Light gray accent text */
+  --color-fd-ring: hsl(210, 100%, 55%);
+  /* Blue ring/outline in dark mode */
+}
+
+
+html {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}

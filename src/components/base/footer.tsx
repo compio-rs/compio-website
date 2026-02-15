@@ -18,6 +18,8 @@ const crates = [
   'compio-signal',
   'compio-tls',
   'see',
+  'synchrony',
+  'thin-cell',
   'winio',
   'cyper',
   'cyper-core',
@@ -87,6 +89,9 @@ export default function Footer() {
               <Link to='https://github.com/compio-rs/compio'>Compio</Link>
             </li>
             <li>
+              <Link to='https://github.com/compio-rs/compio-py'>Compio-py</Link>
+            </li>
+            <li>
               <Link to='https://github.com/compio-rs/cyper'>Cyper</Link>
             </li>
             <li>
@@ -94,6 +99,12 @@ export default function Footer() {
             </li>
             <li>
               <Link to='https://github.com/compio-rs/see'>See</Link>
+            </li>
+            <li>
+              <Link to='https://github.com/compio-rs/synchrony'>Synchrony</Link>
+            </li>
+            <li>
+              <Link to='https://github.com/compio-rs/thin-cell'>Thin Cell</Link>
             </li>
           </ul>
         </section>

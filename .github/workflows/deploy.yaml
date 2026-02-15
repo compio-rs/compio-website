@@ -1,5 +1,8 @@
-name: Deploy PR Preview
-on: pull_request
+name: Deploy Production
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -25,12 +28,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: versions upload --assets ./dist --name compio-website --latest
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request@v3
-        with:
-          comment-tag: preview-deployed
-          message: |
-            **Preview Deployed!**
-
-            Your changes have been deployed to a preview environment. You can view it here: ${{ steps.deploy.outputs.deployment-url }}
+          command: deploy --assets ./dist --name compio-website --latest --domain compio.rs

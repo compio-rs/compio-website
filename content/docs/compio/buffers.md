@@ -4,7 +4,7 @@ Crate `compio-buf` is fundamental to `compio`. It provides abstractions for diff
 
 ## Buffer traits
 
-The trait `IoBuf` is the abstract of read-only buffers. Trait `IoBufMut` provides writing methods in addition, and supports extending the buffer. A write operation can only write into the allocated space, but cannot extend the vector automatically.
+The trait `IoBuf` is the abstract of read-only buffers. Trait `IoBufMut` provides writing methods in addition. It allows you to extend the buffer via explicit APIs, but I/O write operations themselves can only write into the already-allocated space and will not automatically grow the underlying vector.
 
 `IoBuf` & `IoBufMut` represent owned buffers. The IO operations always require the ownership of a buffer to avoid potential race conditions. Although the traits implement for arrays `[u8; N]`, it's not a good idea to use them as buffer type, because the move operation of them is relatively slow. Use `Vec<u8>` or `Box<[u8]>` instead.
 

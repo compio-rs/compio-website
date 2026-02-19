@@ -24,4 +24,4 @@ Windows _does_ support Unix sockets, with some limitations. A Unix socket on Win
 
 ## Control messages of UDP sockets
 
-There are `send_msg*` and `recv_msg*` methods in `UdpSocket`. They retrieve ancillary data as raw buffers. The users are responsible to align the buffer correctly.
+There are `send_msg*` and `recv_msg*` methods in `UdpSocket`. They retrieve ancillary data as raw buffers. Users are responsible for aligning the buffer correctly.

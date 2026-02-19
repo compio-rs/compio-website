@@ -36,7 +36,7 @@ const compio: Section[] = [
   ['Signal', '/docs/compio/signal'],
   ['Process', '/docs/compio/process'],
   ['TLS', '/docs/compio/tls'],
-  ['WebSocket', "/docs/compio/ws"]
+  ['WebSocket', '/docs/compio/ws'],
   // [['QUIC', 'compio/quic'], [['HTTP 3', 'compio/quic/http3']]], // TODO(@AsakuraMizu): Write this
 ]
 

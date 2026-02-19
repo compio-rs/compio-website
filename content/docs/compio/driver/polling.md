@@ -1,6 +1,6 @@
 # polling
 
-`polling` crate is a subproject of `smol`. It provides a unified wrapper for the reactors on most platforms. Therefore, it is used on platforms other than Windows. On Linux, it is an option if io-uring is not available. When the user enables both `"io-uring"` and `"polling"`, a "fusion" driver is used and responsible for deciding which one to use in runtime. You are able to specify the exact driver to use with the `ProactorBuilder`.
+`polling` crate is a subproject of `smol`. It provides a unified wrapper for the reactors on most platforms. Therefore, it is used on platforms other than Windows. On Linux, it is an option if io-uring is not available. When the user enables both `"io-uring"` and `"polling"`, a "fusion" driver is used and responsible for deciding which one to use at runtime. You are able to specify the exact driver to use with the `ProactorBuilder`.
 
 Frankly, there is no real async operations in a reactor. The socket IO operations are non-blocking, but the data copying still takes time. The blocking operations are spawned to the thread pool.
 

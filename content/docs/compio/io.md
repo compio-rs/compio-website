@@ -34,8 +34,12 @@ assert_eq!(read_len, buffer.len());
 
 ## Managed buffer pool
 
-`AsyncReadManaged` and `AsyncReadManagedAt` provide methods to read data with a buffer pool. The buffer pool itself, or the runtime, is responsible for selecting and filling in the suitable buffer. It is specially optimized when using `compio` with `"io-uring"` feature enabled.
+`AsyncReadManaged` and `AsyncReadManagedAt` provide methods to read data with a buffer pool. The buffer pool itself, or the runtime, is responsible for selecting and filling in the suitable buffer. It is specially optimized when using `compio` with io-uring driver enabled.
 
 ## Compatible helpers
 
 Mod `compio::io::compat` provides `SyncStream` and `AsyncStream` for compatibility usages. `SyncStream` implements `std::io::{Read, Write}`, and will return error with `WouldBlock` if the inner buffer should be updated manually. `AsyncStream` wraps `SyncStream` and implements `AsyncRead` & `AsyncWrite` of `futures`.
+
+## Framed IO
+
+TODO

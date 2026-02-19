@@ -10,9 +10,9 @@ A client can simply use `TcpStream::connect` to connect to the remote listener.
 
 See the introduction of [`File::close`](../fs/file) for closing the sockets.
 
-## TCP options
+## Socket options
 
-`TcpListener::bind_with_options`, `TcpStream::connect_with_options` and `TcpStream::bind_and_connect_with_options` accept `TcpOpts` to specify TCP options on creation.
+`*Listener::bind_with_options`, `*Listener::accept_with_options`, `*Stream::connect_with_options` and `TcpStream::bind_and_connect_with_options` accept `SocketOpts` to specify options on creation.
 
 ## Dual-stack support
 
@@ -24,4 +24,4 @@ Windows _does_ support Unix sockets, with some limitations. A Unix socket on Win
 
 ## Control messages of UDP sockets
 
-TODO
+There are `send_msg*` and `recv_msg*` methods in `UdpSocket`. They retrieve ancillary data as raw buffers. The users are responsible to align the buffer correctly.

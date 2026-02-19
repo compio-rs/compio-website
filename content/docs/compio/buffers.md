@@ -4,13 +4,13 @@ Crate `compio-buf` is fundamental to `compio`. It provides abstractions for diff
 
 ## Buffer traits
 
-The trait `IoBuf` is the abstract of read-only buffers. Trait `IoBufMut` provides writing methods in addition, but it doesn't support extending the buffer. Therefore, even `Vec` implements `IoBufMut`, a write operation can only write into the allocated space, but cannot extend the vector automatically.
+The trait `IoBuf` is the abstract of read-only buffers. Trait `IoBufMut` provides writing methods in addition, and supports extending the buffer. A write operation can only write into the allocated space, but cannot extend the vector automatically.
 
 `IoBuf` & `IoBufMut` represent owned buffers. The IO operations always require the ownership of a buffer to avoid potential race conditions. Although the traits implement for arrays `[u8; N]`, it's not a good idea to use them as buffer type, because the move operation of them is relatively slow. Use `Vec<u8>` or `Box<[u8]>` instead.
 
 ## Slicing
 
-Sometimes an owned slice of the buffer is needed. `IoBuf::slice` provides such convenience. It creates a slice which owns the buffer, and the buffer could be retrieved by `<Slice as IntoInner>::into_inner`.
+Sometimes an owned slice of the buffer is needed. `IoBuf::slice` provides such convenience. It creates a slice which owns the buffer, and the buffer could be retrieved by `<Slice as IntoInner>::into_inner`. `IoBufMut::uninit` provides similar functionalities, but it represents only the uninitialized part of the buffer.
 
 ## Vectored buffers
 

@@ -28,3 +28,6 @@ for _i in 0..CLIENT_NUM {
 while handles.next().await.is_some() {}
 dispatcher.join().await.unwrap();
 ```
+
+## An optional solution
+The dispatcher is not the only solution to multithreading web servers. `SO_REUSEADDR`(`SocketOpts::reuse_address`) or `SO_REUSEPORT`(`SocketOpts::reuse_port`) might be more efficient.

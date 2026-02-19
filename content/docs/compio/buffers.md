@@ -10,7 +10,7 @@ The trait `IoBuf` is the abstract of read-only buffers. Trait `IoBufMut` provide
 
 ## Slicing
 
-Sometimes an owned slice of the buffer is needed. `IoBuf::slice` provides such convenience. It creates a slice which owns the buffer, and the buffer could be retrieved by `<Slice as IntoInner>::into_inner`. `IoBufMut::uninit` provides similar functionalities, but it represents only the uninitialized part of the buffer.
+Sometimes an owned slice of the buffer is needed. `IoBuf::slice` provides such convenience. It creates a slice which owns the buffer, and the buffer could be retrieved by `<Slice as IntoInner>::into_inner`. `IoBufMut::uninit` provides similar functionalities, but it exposes only the uninitialized part of the buffer.
 
 ## Vectored buffers
 

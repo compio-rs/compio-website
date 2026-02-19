@@ -30,4 +30,4 @@ dispatcher.join().await.unwrap();
 ```
 
 ## An optional solution
-The dispatcher is not the only solution to multi-threading webservers. `SO_REUSEADDR` or `SO_REUSEPORT` might be more efficient.
+The dispatcher is not the only solution to multi-threading webservers. `SO_REUSEADDR`(`SocketOpts::reuse_address`) or `SO_REUSEPORT`(`SocketOpts::reuse_port`) might be more efficient.

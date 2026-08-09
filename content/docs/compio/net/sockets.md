@@ -16,7 +16,7 @@ See the introduction of [`File::close`](../fs/file) for closing the sockets.
 
 ## Dual-stack support
 
-Windows supports dual-stack IPv6 & IPv4, but it is not enabled by default. You need to enable it manually, after creating the socket, and before binding to an address, calling Windows API your self, if needed.
+Windows supports dual-stack IPv6 & IPv4, but it is not enabled by default. You need to enable it manually after creating the socket and before binding to an address by calling the Windows API yourself, if needed.
 
 ## Unix sockets on Windows
 

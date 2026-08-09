@@ -21,6 +21,8 @@ export default function LinkButton({
     <Link
       className={cx(
         'px-6 py-3 rounded-full flex items-center gap-2',
+        'transition-colors focus-visible:outline-none focus-visible:ring-2',
+        'focus-visible:ring-blue-500 focus-visible:ring-offset-2',
         className,
       )}
       to={to}

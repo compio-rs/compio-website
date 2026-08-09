@@ -13,20 +13,20 @@ pnpm dev
 ## Build
 
 ```shell
-# build for production environment
+# Build for production
 pnpm build
 ```
 
 ## Advanced
 
 ```shell
-# preview the release environment effect
+# Preview the production build
 pnpm preview
 
-# code check
+# Lint the code
 pnpm lint
 
-# code auto fix
+# Format the code
 pnpm format
 ```
 
@@ -36,11 +36,11 @@ pnpm format
 - [x] Code block highlight
 - [x] Small screen optimization
 - [x] Next/Prev page block (content-footer)
-- [ ] Back to top button
+- [x] Back to top button
 - [ ] Dark Mode
-- [ ] Nav background opacity
+- [x] Nav background opacity
 - [ ] SEO
-  - [ ] Page title
+  - [x] Page title
   - [ ] Sitemap
   - [ ] Robots.txt
   - [ ] Open Graph

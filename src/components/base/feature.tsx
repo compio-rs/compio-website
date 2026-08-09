@@ -22,22 +22,23 @@ export default function FeatureBlock({
         'col-span-12',
         'md:col-span-6 gap-4',
         '2xl:col-span-3',
-        'bg-blue-50/40 p-8 rounded-lg flex',
+        'bg-blue-50/40 p-8 rounded-lg border border-blue-100/70 flex',
+        'transition-colors hover:bg-blue-50/70',
       )}
     >
       <div className='flex-1'>
-        <motion.h1
+        <motion.h2
           variants={fadeInItem}
           className='text-3xl font-extrabold flex-col'
         >
           {title}
-        </motion.h1>
+        </motion.h2>
         <FadeIn.Item className='text-zinc-500 mt-4'>
           <p>{children}</p>
         </FadeIn.Item>
       </div>
 
-      <motion.div variants={fadeInItem}>
+      <motion.div variants={fadeInItem} aria-hidden='true'>
         <Icon icon={icon} height={60} className='pl-4 text-blue-950' />
       </motion.div>
     </FadeIn.Container>

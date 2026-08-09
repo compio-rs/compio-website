@@ -58,12 +58,12 @@ export default function Footer() {
       <div
         className={cx(
           'flex flex-col gap-4',
-          '[&_h1]:text-zinc-100 [&_h1]:font-normal [&_h1]:text-base [&_h1]:mb-2',
-          'sm:flex-row sm:gap-16 sm:[&_h1]:text-zinc-100',
+          '[&_h2]:text-zinc-100 [&_h2]:font-normal [&_h2]:text-base [&_h2]:mb-2',
+          'sm:flex-row sm:gap-16',
         )}
       >
         <section>
-          <h1>Find Us</h1>
+          <h2>Find Us</h2>
           <ul className={cx('flex flex-col gap-2 pt-1')}>
             <FindLink
               icon='mdi:github'
@@ -83,7 +83,7 @@ export default function Footer() {
           </ul>
         </section>
         <section>
-          <h1>Projects</h1>
+          <h2>Projects</h2>
           <ul className='hover:*:text-zinc-50'>
             <li>
               <Link to='https://github.com/compio-rs/compio'>Compio</Link>
@@ -109,7 +109,7 @@ export default function Footer() {
           </ul>
         </section>
         <section>
-          <h1>API Documents</h1>
+          <h2>API Documentation</h2>
           <ul className='hover:*:text-zinc-50 grid gap-x-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {crates.map(crate => (
               <li key={crate}>

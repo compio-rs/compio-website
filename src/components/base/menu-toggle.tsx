@@ -29,6 +29,8 @@ export default function MenuToggle({
 
   return (
     <motion.button
+      aria-expanded={open}
+      aria-label={open ? 'Close documentation menu' : 'Open documentation menu'}
       animate={open ? 'open' : 'closed'}
       onClick={() => setOpen(!open)}
       type='button'
@@ -50,7 +52,7 @@ export default function MenuToggle({
       }}
     >
       <svg width='23' height='23' viewBox='0 0 23 23'>
-        <title>Toggle</title>
+        <title>Documentation menu</title>
         <Path
           variants={{
             closed: { d: 'M 2 2.5 L 20 2.5' },

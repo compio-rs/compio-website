@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react'
 import { useRouteError } from 'react-router-dom'
 import Container from './components/base/container'
+import DocumentHead from './components/base/document-head'
 import LinkButton from './components/base/link-button'
 import Layout from './layout'
 
@@ -36,6 +37,7 @@ function ErrorComponent() {
 function NotFound() {
   return (
     <>
+      <DocumentHead title='Page not found' />
       <h1 className='text-6xl font-bold'>Oops...</h1>
       <p className='mt-4 mx-2 text-sm text-zinc-600'>
         Sorry, the page you are looking for does not exist.
@@ -47,6 +49,7 @@ function NotFound() {
 function Unknown() {
   return (
     <>
+      <DocumentHead title='Error' />
       <h1 className='text-6xl font-bold'>Oops...</h1>
       <p className='mt-4 mx-2 text-sm text-zinc-600'>
         Some unknown error occurred while trying to load the page.

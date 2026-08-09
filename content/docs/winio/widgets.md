@@ -82,7 +82,7 @@ A simple window.
 | `fn set_icon_by_id: u16`      | Sets the window icon by resource ID. |
 | `prop backdrop: mut Backdrop` | The backdrop effect of the window.   |
 
-### MacOS specific
+### macOS specific
 
 | Members                       | Description                        |
 | ----------------------------- | ---------------------------------- |
